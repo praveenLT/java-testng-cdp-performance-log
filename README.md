@@ -1,4 +1,4 @@
-# Java TestNG Selenium 
+# How to capture performance logs in Java-TestNG using CDP on LambdaTest 
 
 ### Environment Setup
 

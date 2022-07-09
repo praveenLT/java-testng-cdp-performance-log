@@ -34,7 +34,21 @@ Set LambdaTest Username and Access Key in environment variables.
    $ set LT_USERNAME="YOUR_USERNAME"
    $ set LT_ACCESS_KEY="YOUR ACCESS KEY"
    ```
-    
+### View performance metrics
+To view performance metrics, the following code can be used:
+```java
+DevTools devTools = ((HasDevTools) driver).getDevTools();
+devTools.createSession();
+
+devTools.send(Performance.enable(Optional.empty()));
+List<Metric> metricList = devTools.send(Performance.getMetrics());
+
+
+for (Metric m : metricList) {
+   System.out.println(m.getName() + " = " + m.getValue());
+   success = true;
+}
+```
 ### Running Tests
 
 ```
